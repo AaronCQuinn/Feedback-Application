@@ -1,0 +1,74 @@
+.fa-feedback-form-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-feedback-form {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    background-color: ghostwhite;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.fa-feedback-form h3 {
+    font-weight: bolder;
+}
+
+.input-group {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+input {
+    padding: 10px;
+    flex-grow: 2;
+    border: none;
+    font-size: 16px;
+  }
+  
+input:focus {
+    outline: none;
+}
+
+.btn {
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--glossy-grape);
+    color: white;
+    width: 100px;
+    height: 40px;
+    cursor: pointer; 
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    color: #333;
+    cursor: auto;
+}
+
+
+.fa-feedback-wrn-mesage {
+    padding: 10px 0 0 0;
+    color: red;
+}
+
+@media only screen and (max-width: 480px) { 
+    .fa-feedback-form {
+        width: 90vw;
+        text-align: center;
+    }
+    .input-group {
+        width: auto;
+    }
+}

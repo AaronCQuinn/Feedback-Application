@@ -1,0 +1,17 @@
+.fa-header {
+    padding: 20px 0 20px 0;
+    width: 100vw;
+    background-color: var(--rich-black-fogra-29);
+}
+
+.fa-header-container {
+    background-color: var(--rich-black-fogra-29);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-header-container h1 {
+    background-color: var(--rich-black-fogra-29);
+    color: var(--glossy-grape);
+}

@@ -1,0 +1,24 @@
+.fa-feedback-stats-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-feedback-stats {
+    width: 50vw;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 10px 0;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: var(--glossy-grape);
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+@media only screen and (max-width: 480px) { 
+    .fa-feedback-stats {
+        width: 90vw;
+    }
+}
