@@ -31,7 +31,7 @@ function App() {
   }
 
   const addFeedback = (newFeedback) => {
-    setFeedback([...feedback, newFeedback])
+    setFeedback([newFeedback, ...feedback])
   }
 
   return (

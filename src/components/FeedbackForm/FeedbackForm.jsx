@@ -1,22 +1,26 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import {v4 as uuid} from 'uuid'
 import RatingSelect from '../RatingSelect/RatingSelect';
 import './feedbackform.css'
 
 const FeedbackForm = ({handleAdd}) => {
     const [text, setText] = useState('');
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState(10);
     const [btnDisabled, setBtnDisabled] = useState(true);
     const [wrnMessage, setwrnMessage] = useState(false);
 
     const handleInputChange = (e) => {
+        // If there is no text, disable submit button and hide warning.
         if (text === '') {
             setBtnDisabled(true);
             setwrnMessage(false);
+        // If there is text, and the char count is <= 10, show message and disable button.
         } else if (text !== '' && text.trim().length <= 10) {
             setwrnMessage(true)
             setBtnDisabled(true);
         } else {
+        // The text > 10 characters, let user submit.
             setwrnMessage(false);
             setBtnDisabled(false);
         }
@@ -34,6 +38,10 @@ const FeedbackForm = ({handleAdd}) => {
             handleAdd(newFeedback);
             setText('');
         }
+    }
+
+    FeedbackForm.propTypes = {
+        handleAdd: PropTypes.func,
     }
 
     return (
