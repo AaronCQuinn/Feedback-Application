@@ -1,48 +1,37 @@
-import React, { useState } from 'react'
+import React from 'react'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import Header from "./components/Header/Header";
 import FeedbackList from "./components/FeedbackList/FeedbackList";
 import FeedbackStats from './components/FeedbackStats/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm/FeedbackForm';
+import About from './pages/About';
+import AboutIcon from './components/AboutIcon';
+
+// Context providers.
+
+import {FeedbackProvider} from './context/FeedbackContext'
 
 function App() {
 
-  let feedbackItems = [
-    {
-        id: 0,
-        rating: 10,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eveniet est ab voluptatum cumque impedit suscipit dignissimos ipsam reiciendis et',
-    },
-    {
-        id: 1,
-        rating: 5,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eveniet est ab voluptatum cumque impedit suscipit dignissimos ipsam reiciendis et',
-    },
-    {
-        id: 2,
-        rating: 7,
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eveniet est ab voluptatum cumque impedit suscipit dignissimos ipsam reiciendis et',
-    },
-  ]
-  // Eventually this will do an API call, while that API calls, should display a loading sign.
-  const [feedback, setFeedback] = useState(feedbackItems);
-
-  const handleDelete = (id) => {
-    setFeedback(feedback.filter(item => item.id !== id))
-  }
-
-  const addFeedback = (newFeedback) => {
-    setFeedback([newFeedback, ...feedback])
-  }
-
   return (
-    <div className="App">
-      <Header />
-      <div className="container">
-        <FeedbackForm handleAdd={addFeedback}/>
-        <FeedbackStats feedback={feedback} />
-        <FeedbackList feedback={feedback} handleDelete={handleDelete}/>
-      </div>
-    </div>
+    <FeedbackProvider>
+      <Router> 
+          <Header />
+          <div className="container">
+            <Routes>
+              <Route exact path="/" element={
+                <>
+                  <FeedbackForm />
+                  <FeedbackStats />
+                  <FeedbackList />
+                </>
+              }></Route>
+              <Route exact path='/about' element={<About />} />
+            </Routes>
+            <AboutIcon />
+          </div>
+      </Router>
+    </FeedbackProvider>
   );
 }
 

@@ -1,0 +1,22 @@
+.fa-about-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-about {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 10px 0;
+    background-color: ghostwhite;
+    width: 50vw;
+}
+
+@media only screen and (max-width: 480px) { 
+    .fa-about {
+        width: 90vw;
+    }
+}

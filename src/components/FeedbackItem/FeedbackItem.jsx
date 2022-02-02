@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import FeedbackContext from '../../context/FeedbackContext';
 import './feedbackitem.css';
 import { MdClose } from 'react-icons/md'
 
-function FeedbackItem({item, handleDelete}) {
+function FeedbackItem({item}) {
+    const {deleteFeedback} = useContext(FeedbackContext)
     return (
         <div className="fa-feedback-item-container">
             <div className='fa-feedback-item'>
@@ -11,7 +13,7 @@ function FeedbackItem({item, handleDelete}) {
                         {item.rating}
                     </div>
                     <div className="fa-feedback-item-close">
-                        <MdClose onClick={() => handleDelete(item.id)}/>
+                        <MdClose onClick={() => deleteFeedback(item.id)}/>
                     </div>
                 </div>
                 <div className="fa-feedback-item-text">

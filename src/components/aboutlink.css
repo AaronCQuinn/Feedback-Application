@@ -1,0 +1,15 @@
+.fa-about-link {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    color: var(--glossy-grape);
+    cursor: pointer;
+}
+
+.fa-about-link a {
+    color: var(--glossy-grape);
+}
+
+.fa-about-link a:hover {
+    color: white;
+}

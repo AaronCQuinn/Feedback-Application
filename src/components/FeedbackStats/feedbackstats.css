@@ -13,6 +13,7 @@
     padding: 10px;
     border-radius: 15px;
     background-color: var(--glossy-grape);
+    font-size: 1.15em;
     font-weight: bold;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
