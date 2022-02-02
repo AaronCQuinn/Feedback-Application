@@ -30,6 +30,11 @@
     padding: 20px 50px;
 }
 
+.fa-feedback-item-close {
+    display: flex;
+    gap: 5px;
+}
+
 @media only screen and (max-width: 480px) { 
     .fa-feedback-item{
         width: 90vw;

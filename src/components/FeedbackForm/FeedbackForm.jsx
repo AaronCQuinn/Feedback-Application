@@ -1,6 +1,5 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import FeedbackContext from '../../context/FeedbackContext';
-import PropTypes from 'prop-types';
 import {v4 as uuid} from 'uuid'
 import RatingSelect from '../RatingSelect/RatingSelect';
 import './feedbackform.css'
@@ -11,7 +10,15 @@ const FeedbackForm = () => {
     const [btnDisabled, setBtnDisabled] = useState(true);
     const [wrnMessage, setwrnMessage] = useState(false);
 
-    const {addFeedback} = useContext(FeedbackContext);
+    const {addFeedback, editFeedback, updateCurrentFeedback, seteditFeedback} = useContext(FeedbackContext);
+
+    useEffect(() => {
+        if (editFeedback.edit) {
+            setBtnDisabled(false);
+            setText(editFeedback.item.text);
+            setRating(editFeedback.item.rating);
+        }
+    }, [editFeedback])
 
     const handleInputChange = (e) => {
         // If there is no text, disable submit button and hide warning.
@@ -38,13 +45,14 @@ const FeedbackForm = () => {
                 rating,
                 id: uuid()
             }
-            addFeedback(newFeedback);
+            if (editFeedback.edit) {
+                updateCurrentFeedback(editFeedback.item.id, newFeedback);
+                seteditFeedback({item: {}, edit: false})
+            } else {
+                addFeedback(newFeedback);
+            }
             setText('');
         }
-    }
-
-    FeedbackForm.propTypes = {
-        handleAdd: PropTypes.func,
     }
 
     return (
