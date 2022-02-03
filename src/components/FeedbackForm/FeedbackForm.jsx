@@ -1,6 +1,5 @@
 import React, {useState, useContext, useEffect} from 'react';
 import FeedbackContext from '../../context/FeedbackContext';
-import {v4 as uuid} from 'uuid'
 import RatingSelect from '../RatingSelect/RatingSelect';
 import './feedbackform.css'
 
@@ -43,7 +42,6 @@ const FeedbackForm = () => {
             const newFeedback = {
                 text,
                 rating,
-                id: uuid()
             }
             if (editFeedback.edit) {
                 updateCurrentFeedback(editFeedback.item.id, newFeedback);

@@ -1,0 +1,21 @@
+.fa-feedback-list-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-feedback-list-msg {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    margin: 50px 0px;
+}
+
+.fa-feedback-list-spinner {
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    margin: 50px 0px;
+}
