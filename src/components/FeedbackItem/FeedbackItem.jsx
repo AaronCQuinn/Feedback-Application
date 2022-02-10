@@ -6,6 +6,7 @@ import { FaEdit } from 'react-icons/fa'
 
 function FeedbackItem({item}) {
     const {deleteFeedback, updateFeedback} = useContext(FeedbackContext)
+    console.log(item);
     return (
         <div className="fa-feedback-item-container">
             <div className='fa-feedback-item'>

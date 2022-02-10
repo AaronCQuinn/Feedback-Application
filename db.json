@@ -9,11 +9,6 @@
       "id": 2,
       "rating": 7,
       "text": "The second example feedback, coming from the back end."
-    },
-    {
-      "id": 3,
-      "rating": 8,
-      "text": "The third example feedback, coming from the back end."
     }
   ]
 }
