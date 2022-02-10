@@ -11,7 +11,7 @@ function About() {
                 <div className='fa-about'> 
                     <h2> About </h2>
                     <div> Version 1.1.0 </div>    
-                    <div> A react application designed to collect feedback from users for a product or service. </div>    
+                    <div> A react application designed to collect feedback from users for a product or service. The app runs completely on the front end, however would require small effort if a backend were to be attached. </div>    
                     <div> Primarily created by Aaron Quinn to practice react development along with CSS. </div>    
                     <Link to='/'>Return To Homepage</Link>
                 </div>
